@@ -1,0 +1,28 @@
+
+* {
+    background: black;
+    color: white;
+}
+pre {
+    /*border: solid 1pt blue;*/
+    margin: 0;
+}
+.in {
+    color: #777;
+    font-weight: bold;
+}
+.out {
+}
+
+.err {
+    color: red;;
+}
+
+input {
+    border: solid 1pt #CCC;
+    width: 100%;;
+}
+
+pre {
+    display: inline;
+}
