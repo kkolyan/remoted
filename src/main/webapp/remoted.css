@@ -6,6 +6,7 @@
 pre {
     /*border: solid 1pt blue;*/
     margin: 0;
+    display: inline;
 }
 .in {
     color: #777;
@@ -20,9 +21,9 @@ pre {
 
 input {
     border: solid 1pt #CCC;
-    width: 100%;;
+    width: 50%;
 }
 
-pre {
+form {
     display: inline;
 }

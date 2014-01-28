@@ -19,12 +19,15 @@ public class WindowMakerTest {
                         "Dec 17 1\n" +
                         "9:59:50 \n" +
                         "2013 fro\n" +
-                        "m 5.19.2\n"
-        )), join(WindowMaker.getWindow(8, 4, 3, create(
-                "Using username \"kkolyan\".\n" +
+                        "m 5.19.2"
+        )), join(WindowMaker.getWindow(8, 4, 2, create(
+                "" +
+                        "Using username \"kkolyan\".\n" +
                         "kkolyan@kkolyan.fvds.ru's password:\n",
-                "Last login: Tue Dec 17 19:59:50 2013 from 5.19.250.71\n",
-                "-bash-4.1#"
+                "" +
+                        "Last login: Tue Dec 17 19:59:50 2013 from 5.19.250.71\n",
+                "" +
+                        "-bash-4.1#"
         ))));
     }
 

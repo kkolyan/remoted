@@ -16,7 +16,7 @@ public class BlockTest {
     public void testWithoutTail() throws IOException {
         assertEquals(
                 "Using username \"kkolyan\"." + SystemUtils.LINE_SEPARATOR +
-                        "kkolyan@kkolyan.fvds.ru's password:" + SystemUtils.LINE_SEPARATOR, create(
+                        "kkolyan@kkolyan.fvds.ru's password:", create(
                 "Using username \"kkolyan\".\n" +
                         "kkolyan@kkolyan.fvds.ru's password:\n" +
                         "Last login: Tue Dec 17 19:59:50 2013 from 5.19.250.71\n" +
@@ -32,7 +32,7 @@ public class BlockTest {
                         "9:59:50 2013" + SystemUtils.LINE_SEPARATOR +
                         " from 5.19.2" + SystemUtils.LINE_SEPARATOR +
                         "50.71" + SystemUtils.LINE_SEPARATOR +
-                        "-bash-4.1#" + SystemUtils.LINE_SEPARATOR, create(
+                        "-bash-4.1#", create(
                 "" +
                         "Using username \"kkolyan\".\n" +
                         "kkolyan@kkolyan.fvds.ru's password:\n" +

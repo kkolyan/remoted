@@ -11,16 +11,6 @@ import java.util.Deque;
  */
 public class SplittableBuffer extends ByteArrayOutputStream {
 
-    public synchronized int getRows() {
-        int rows = 1;
-        for (int i = 0; i < count; i ++) {
-            if (buf[i] == '\n') {
-                rows ++;
-            }
-        }
-        return rows;
-    }
-
     private void rewind(int bytes) {
         if (bytes > count) {
             throw new IllegalStateException();
@@ -80,5 +70,11 @@ public class SplittableBuffer extends ByteArrayOutputStream {
         SplittableBuffer slice = new SplittableBuffer();
         slice.write(buf, minI+1, maxI - minI);
         return slice;
+    }
+
+    public synchronized void stripTailingReturnCarriage() {
+        if (buf[count - 1] == '\r') {
+            rewind(1);
+        }
     }
 }

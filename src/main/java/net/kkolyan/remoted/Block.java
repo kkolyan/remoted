@@ -28,11 +28,9 @@ public class Block {
                 }
                 lines.getLast().write(data[i]);
             } else {
+                lines.getLast().stripTailingReturnCarriage();
                 lines.addLast(new SplittableBuffer());
             }
-        }
-        if (lines.getLast().size() == 0) {
-            lines.removeLast();
         }
     }
 
@@ -76,9 +74,13 @@ public class Block {
 
     public String getContent(String encoding) {
         StringBuilder s = new StringBuilder();
+        int n = 0;
         for (SplittableBuffer line: lines) {
             try {
-                s.append(line.toString(encoding)).append(SystemUtils.LINE_SEPARATOR);
+                if (n ++ > 0) {
+                    s.append(SystemUtils.LINE_SEPARATOR);
+                }
+                s.append(line.toString(encoding));
             } catch (UnsupportedEncodingException e) {
                 throw new IllegalStateException(e);
             }
