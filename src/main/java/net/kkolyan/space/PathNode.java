@@ -2,31 +2,38 @@ package net.kkolyan.space;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * @author nplekhanov
  */
 public class PathNode {
+    private String name;
     private long size;
     private List<PathNode> children;
-    private File file;
 
-    public PathNode(File file, List<PathNode> children, long size) {
-        this.file = file;
-        this.children = children;
-        this.size = size;
+    public String getName() {
+        return name;
     }
 
-    public long getSize() {
-        return size;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public List<PathNode> getChildren() {
         return children;
     }
 
-    public File getFile() {
-        return file;
+    public void setChildren(List<PathNode> children) {
+        this.children = children;
+    }
+
+    public long getSize() {
+        return size;
+    }
+
+    public void setSize(long size) {
+        this.size = size;
     }
 }
